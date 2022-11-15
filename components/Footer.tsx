@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from '/styles/layout/footer.module.css';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
@@ -10,7 +11,7 @@ export const Footer = () => {
 
             <div className={styles.source_code_section}>
                 Source Code :
-                <a href='https://github.com/ArianAbi/FakeStore-Ecommerce' target="_black"><GitHubIcon /></a>
+                <Link href='https://github.com/ArianAbi/FakeStore-Ecommerce' target="_blank"><GitHubIcon /></Link>
             </div>
 
 

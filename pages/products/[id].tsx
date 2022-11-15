@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from '/styles/product_dynamic_route.module.css';
 import AddToCard from './components/AddToCard';
 import StarIcon from '@mui/icons-material/Star';
@@ -11,7 +12,7 @@ export default function Product_Detail(product: any) {
             >
 
                 <div className={styles.breedcrumb}>
-                    <span><a href='/products'>Products</a></span> / <span className={styles.active}>{product.id}</span>
+                    <span><Link href='/products'>Products</Link></span> / <span className={styles.active}>{product.id}</span>
                 </div>
 
                 <div className='h-[50vh] p-10 bg-white flex justify-center items-center'>
