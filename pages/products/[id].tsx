@@ -23,7 +23,7 @@ export default function Product_Detail(product: any) {
                 </div>
 
                 <span className={styles.category_tag}>
-                    <a href='/products'>{product.category}</a>
+                    <Link href='/products'>{product.category}</Link>
                 </span>
 
                 <div className=' pb-6 max-h-fit'>
