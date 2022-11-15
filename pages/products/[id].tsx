@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Head from 'next/head';
+import Image from 'next/image';
 import styles from '/styles/product_dynamic_route.module.css';
 import AddToCard from './components/AddToCard';
 import StarIcon from '@mui/icons-material/Star';
@@ -6,6 +8,10 @@ import StarIcon from '@mui/icons-material/Star';
 export default function Product_Detail(product: any) {
     return (
         <>
+
+            <Head>
+                <title>{product.title}</title>
+            </Head>
 
             <div
                 className={styles.container}
@@ -16,9 +22,12 @@ export default function Product_Detail(product: any) {
                 </div>
 
                 <div className='h-[50vh] p-10 bg-white flex justify-center items-center'>
-                    <img
+                    <Image
                         className='max-h-full w-auto'
                         src={product.image}
+                        alt={product.title}
+                        width={1024}
+                        height={1024}
                     />
                 </div>
 

@@ -6,13 +6,14 @@ import SearchIcon from '@mui/icons-material/Search';
 
 export const Header = () => {
 
-    const [term, setTerm] = useState('');
+    const [term, setTerm] = useState<string | string[] | undefined>('');
     const router = useRouter();
     const { query } = router;
 
     useEffect(() => {
         if (Object.keys(query).length !== 0) {
-            setTerm(query.q)
+            const term: string | string[] | undefined = query.q;
+            setTerm(term)
         }
     }, [])
 

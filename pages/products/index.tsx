@@ -1,6 +1,7 @@
-import Product_Item from "./components/Product_Item";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import Head from "next/head";
+import Product_Item from "./components/Product_Item";
 
 export default function Products({ _products }: any) {
 
@@ -30,8 +31,14 @@ export default function Products({ _products }: any) {
     return (
         <>
 
+            <Head>
+                <title>Products</title>
+            </Head>
+
             <div
-                className="h-full w-full grid grid-cols-1 gap-0"
+                className="h-full w-full grid grid-cols-1 gap-0 
+                md:grid-cols-3 md:gap-4 md:px-4 md:py-8
+                lg:grid-cols-4 lg:px-6"
             >
 
                 {products.map((product: any) => {
@@ -43,7 +50,7 @@ export default function Products({ _products }: any) {
                             image={product.image}
                             description={product.description}
                             price={product.price}
-                            rating={product.rating}
+                            rate={product.rating.rate}
                         />
                     )
                 })}

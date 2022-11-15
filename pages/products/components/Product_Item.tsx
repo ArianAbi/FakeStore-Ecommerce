@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link'
 import StarIcon from '@mui/icons-material/Star';
 
@@ -7,35 +8,43 @@ interface products {
     description: string,
     image: string,
     price: number | string,
-    rating: {
-        rate: number,
-        count: number
-    }
+    rate: number | string
 }
 
 export default function (products: products) {
     return (
         <Link href={`/products/${products.id}`}>
             <div
-                className="h-[180px] w-full flex justify-between text-gray-700 border-b-2"
+                className="h-[180px] w-full flex justify-between text-gray-700 border-b-2
+                md:flex-col md:h-[400px] md:border-2 md:rounded-md"
             >
 
-                <div className="h-full w-[150px] flex items-center justify-center bg-white p-3">
-                    <img
+                <div
+                    className="h-full w-[150px] flex items-center justify-center bg-white p-3
+                md:h-[250px] md:mr-auto md:ml-auto"
+                >
+                    <Image
                         className="max-h-full w-auto"
                         src={products.image}
+                        alt={products.title}
+                        width={256}
+                        height={256}
                     />
                 </div>
 
-                <div className="h-full w-full flex flex-col p-4">
+                <div className="h-full w-full flex flex-col p-4
+                md:h-[150px]"
+                >
 
                     <h2
-                        className="font-bold"
+                        className="font-bold
+                        md:h-[50px] md:truncate md:text-[0.9rem]"
                     >
                         {products.title}
                     </h2>
 
-                    <div className="h-[70px] ml-auto flex flex-1 flex-col justify-end items-end ">
+                    <div className="h-[70px] ml-auto flex flex-1 flex-col justify-end items-end 
+                    md:flex-row md:w-full md:justify-between ">
                         <p
                             className="text-green-400 text-lg font-bold"
                         >
@@ -44,7 +53,7 @@ export default function (products: products) {
 
                         <p className='text-yellow-500 flex gap-1 text-base font-semibold items-center pt-4'>
                             <StarIcon />
-                            {products.rating.rate}
+                            {products.rate}
                         </p>
                     </div>
                 </div>
