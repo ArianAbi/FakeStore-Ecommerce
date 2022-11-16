@@ -1,0 +1,28 @@
+@tailwind components;
+
+@layer components {
+    .deactive {
+        @apply absolute right-0 left-0 mx-auto transition-all rounded-full w-[25px] h-[25px] px-4 bg-white opacity-0;
+    }
+
+    .active {
+        @apply absolute right-0 left-0 mx-auto transition-all rounded-full w-[70%] h-[25px] px-4 bg-white opacity-100;
+    }
+
+
+    .formDeactive {
+        @apply absolute right-0 transition-all flex justify-center items-center w-0 h-[50px];
+    }
+
+    .formActive {
+        @apply absolute right-0 transition-all flex justify-center items-center w-screen h-[50px] bg-sky-900 z-10;
+    }
+
+    .formDeactive>div {
+        @apply w-[20px] h-[20px] flex items-center justify-center absolute right-5 opacity-0 -z-10;
+    }
+
+    .formActive>div {
+        @apply w-[20px] h-[20px] flex items-center justify-center absolute right-5;
+    }
+}
