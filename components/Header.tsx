@@ -3,6 +3,7 @@ import Router, { useRouter } from 'next/router';
 import Link from 'next/link';
 import styles from '/styles/layout/header.module.css';
 import SearchIcon from '@mui/icons-material/Search';
+import { Search } from './Search/Search';
 
 export const Header = () => {
 
@@ -37,13 +38,15 @@ export const Header = () => {
                     </Link>
                 </div>
 
-                <form className={styles.search} onSubmit={onFormSubmit}>
+
+                <Search term={term} setTerm={setTerm} onSubmit={onFormSubmit} />
+                {/* <form className={`${styles.search} md:${styles.search_md}`} onSubmit={onFormSubmit}>
                     <input
                         placeholder='search term'
                         value={term}
-                        onChange={e => setTerm(e.target.value.toLowerCase())}
+                        onChange={e => setTerm(e.target.value.toLowerCase())} 
                     />
-                </form>
+            </form>*/}
             </header>
 
 
