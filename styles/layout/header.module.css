@@ -2,15 +2,23 @@
 
 @layer components {
     .header_protector {
-        height: 50px;
+        height: 60px;
     }
 
     .header {
-        @apply h-[50px] w-screen flex flex-1 justify-between items-center px-6 mb-2 bg-sky-900 fixed top-0 z-10;
+        @apply h-[60px] w-screen flex flex-1 justify-center items-center px-6 py-3 mb-2 bg-sky-900 fixed top-0 z-10;
         box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.2);
     }
 
     .logo {
-        @apply select-none text-base font-bold tracking-wide;
+        @apply absolute left-6 select-none text-base font-bold tracking-wide;
+    }
+
+    .search {
+        @apply w-[450px] h-full flex justify-center items-center;
+    }
+
+    .search>input {
+        @apply w-full h-full px-4 rounded-full text-black;
     }
 }

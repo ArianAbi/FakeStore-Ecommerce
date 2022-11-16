@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
 import Router, { useRouter } from 'next/router';
+import useMediaQuery from '../hooks/useMediaQuery';
 import Link from 'next/link';
 import styles from '/styles/layout/header.module.css';
 import SearchIcon from '@mui/icons-material/Search';
-import { Search } from './Search/Search';
+import { SearchMobile } from './SearchComponent/SearchMobile';
 
 export const Header = () => {
 
     const [term, setTerm] = useState<string | string[] | undefined>('');
+    const isMd = useMediaQuery('(max-width: 768px)');
     const router = useRouter();
     const { query } = router;
 
@@ -17,6 +19,7 @@ export const Header = () => {
             setTerm(term)
         }
     }, [])
+
 
     const onFormSubmit = (e: any) => {
         e.preventDefault();
@@ -39,14 +42,20 @@ export const Header = () => {
                 </div>
 
 
-                <Search term={term} setTerm={setTerm} onSubmit={onFormSubmit} />
-                {/* <form className={`${styles.search} md:${styles.search_md}`} onSubmit={onFormSubmit}>
-                    <input
-                        placeholder='search term'
-                        value={term}
-                        onChange={e => setTerm(e.target.value.toLowerCase())} 
-                    />
-            </form>*/}
+                {isMd && <SearchMobile term={term} setTerm={setTerm} onSubmit={onFormSubmit} />}
+
+                {!isMd &&
+
+                    <form className={styles.search} onSubmit={onFormSubmit}>
+                        <input
+                            placeholder='search term'
+                            value={term}
+                            onChange={e => setTerm(e.target.value.toLowerCase())}
+                        />
+                    </form>
+
+                }
+
             </header>
 
 
