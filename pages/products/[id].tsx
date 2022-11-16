@@ -26,6 +26,7 @@ export default function Product_Detail(product: any) {
                         className='max-h-full w-auto'
                         src={product.image}
                         alt={product.title}
+                        loading="eager"
                         width={1024}
                         height={1024}
                     />
@@ -74,7 +75,7 @@ export async function getServerSideProps(context: any) {
 
     const { id } = context.query;
 
-    const res = await (await fetch('http://localhost:3000/products.json')).json()
+    const res = await (await fetch(`${process.env.REACT_APP_URL}/products.json`)).json()
     const products = res.filter((product: any) => {
 
         const ID_AS_NUMBER = parseInt(id);
