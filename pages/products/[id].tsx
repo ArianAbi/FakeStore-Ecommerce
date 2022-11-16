@@ -21,7 +21,7 @@ export default function Product_Detail(product: any) {
                     <span><Link href='/products'>Products</Link></span> / <span className={styles.active}>{product.id}</span>
                 </div>
 
-                <div className='h-[50vh] p-10 bg-white flex justify-center items-center'>
+                <div className='h-[40vh] p-10 bg-white flex justify-center items-center'>
                     <Image
                         className='max-h-full w-auto'
                         src={product.image}
@@ -50,7 +50,7 @@ export default function Product_Detail(product: any) {
                         {product.rating.rate}
                     </p>
 
-                    <h3 className='text-black text-2xl font-semibold'>
+                    <h3 className='text-black text-lg font-semibold'>
                         Description :
                         <p className={styles.description}>
                             {product.description}

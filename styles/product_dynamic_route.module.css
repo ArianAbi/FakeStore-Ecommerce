@@ -6,7 +6,7 @@
     }
 
     .breedcrumb {
-        @apply text-gray-500 text-[1.1rem];
+        @apply text-gray-500 text-[1rem];
     }
 
     .breedcrumb>span:not(.active):hover {
@@ -18,15 +18,15 @@
     }
 
     .title {
-        @apply text-2xl text-black font-semibold py-4 border-y-2;
+        @apply text-xl text-black font-semibold py-4 border-y-2;
     }
 
     .rating {
-        @apply text-yellow-500 flex gap-1 text-xl font-semibold items-center py-5;
+        @apply text-yellow-500 flex gap-1 text-xl font-semibold text-base items-center py-5;
     }
 
     .description {
-        @apply text-gray-900 text-[1.2rem] font-normal p-2;
+        @apply text-gray-900 text-[1rem] font-normal p-2;
     }
 
     .add_to_cart_button {
@@ -34,6 +34,6 @@
     }
 
     .category_tag {
-        @apply block w-fit bg-sky-300 px-3 py-2 rounded-full text-black font-semibold font-semibold;
+        @apply block w-fit bg-sky-300 text-[0.9rem] tracking-wider italic px-3 py-2 rounded-full text-black font-semibold font-semibold;
     }
 }

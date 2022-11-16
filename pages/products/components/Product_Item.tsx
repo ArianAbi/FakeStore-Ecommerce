@@ -15,7 +15,7 @@ export default function (products: products) {
     return (
         <Link href={`/products/${products.id}`}>
             <div
-                className="h-[180px] w-full flex justify-between text-gray-700 border-b-2
+                className="h-[150px] w-full flex justify-between text-gray-700 border-b-2
                 md:flex-col md:h-[400px] md:border-2 md:rounded-md"
             >
 
@@ -23,12 +23,17 @@ export default function (products: products) {
                     className="h-full w-[150px] flex items-center justify-center bg-white p-3
                 md:h-[250px] md:mr-auto md:ml-auto"
                 >
+                    {/* <img className="max-h-full w-auto" src={products.image} /> */}
+                    {/* <Image src={products.image} alt={products.title} fill sizes='100%' /> */}
                     <Image
                         className="max-h-full w-auto"
                         src={products.image}
                         alt={products.title}
-                        width={256}
-                        height={256}
+                        sizes="(max-width: 768px) 100vw,
+                        (max-width: 1200px) 50vw,
+                        33vw"
+                        width={512}
+                        height={512}
                     />
                 </div>
 
@@ -37,8 +42,8 @@ export default function (products: products) {
                 >
 
                     <h2
-                        className="font-bold
-                        md:h-[50px] md:truncate md:text-[0.9rem]"
+                        className="font-bold text-[0.9rem]
+                        md:h-[50px] md:truncate md:text-[0.95rem]"
                     >
                         {products.title}
                     </h2>

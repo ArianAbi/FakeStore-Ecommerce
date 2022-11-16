@@ -38,7 +38,9 @@ export default function Products({ _products }: any) {
             <div
                 className="h-full w-full grid grid-cols-1 gap-0 
                 md:grid-cols-3 md:gap-4 md:px-4 md:py-8
-                lg:grid-cols-4 lg:px-6"
+                lg:grid-cols-4 lg:px-6
+                xl:grid-cols-5
+                "
             >
 
                 {products.map((product: any) => {
