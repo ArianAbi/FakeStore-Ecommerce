@@ -11,7 +11,7 @@ export default function LandingPage() {
 
       <div className="h-screen w-screen flex flex-col items-center justify-center gap-4 bg-black">
         <h2 className="text-4xl">
-          Landing Page Updated
+          Still in Development
         </h2>
         <Link
           className="text-cyan-400 text-lg underline"
