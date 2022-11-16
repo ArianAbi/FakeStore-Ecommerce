@@ -1,7 +1,9 @@
+import React from 'react';
+
 interface Search {
     term: string | string[] | undefined,
     setTerm: CallableFunction,
-    onSubmit: FormEventHandeler<HTMLFormElement> | undefined
+    onSubmit: React.FormEventHandler<HTMLFormElement> | undefined
 }
 
 export const Search = ({ term, setTerm, onSubmit }: Search) => {
