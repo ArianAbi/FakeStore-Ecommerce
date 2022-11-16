@@ -34,6 +34,6 @@
     }
 
     .category_tag {
-        @apply block w-fit bg-sky-300 text-[0.9rem] tracking-wider italic px-3 py-2 rounded-full text-black font-semibold font-semibold;
+        @apply block w-fit bg-sky-300 text-[0.85rem] tracking-wider italic px-5 py-2 rounded-full text-black;
     }
 }
