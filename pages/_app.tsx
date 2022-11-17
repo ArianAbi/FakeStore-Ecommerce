@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import { useEffect, useState } from 'react';
+import useMediaQuery from '../hooks/useMediaQuery';
 import { useRouter } from 'next/router';
 import type { AppProps } from 'next/app'
 import { Header } from '../components/Header'
@@ -9,6 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   const [atProductIdPage, setAtProductIdPage] = useState(false);
   const router = useRouter();
+  const isMd = useMediaQuery('(max-width: 768px)');
 
   useEffect(() => {
 
@@ -32,8 +34,8 @@ export default function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
         <Footer />
 
-        {/* add a div with the hight of AddToCard component if we are at product/[id] route */}
-        {atProductIdPage && <div className='h-[90px] w-full' />}
+        {/* add a div with the hight of AddToCard component if we are at product/[id] route and we are in mobile screen */}
+        {atProductIdPage && isMd && <div className='h-[90px] w-full' />}
       </div>
     </>
   )
