@@ -27,12 +27,14 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
+      <div className='flex flex-col min-h-screen'>
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
 
-      {/* add a div with the hight of AddToCard component if we are at product/[id] route */}
-      {atProductIdPage && <div className='h-[90px] w-full' />}
+        {/* add a div with the hight of AddToCard component if we are at product/[id] route */}
+        {atProductIdPage && <div className='h-[90px] w-full' />}
+      </div>
     </>
   )
 }

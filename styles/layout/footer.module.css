@@ -2,7 +2,8 @@
 
 @layer components {
     .footer {
-        @apply flex flex-1 flex-col gap-6 pt-8 items-center text-black border-t-2 bg-sky-900;
+        @apply flex flex-col gap-6 pt-8 items-center text-black border-t-2 bg-sky-900;
+        margin-top: auto;
     }
 
     .footer_header {
