@@ -17,7 +17,7 @@
     }
 
     .search {
-        @apply w-[450px] h-full flex justify-center items-center;
+        @apply relative w-[450px] h-full flex justify-center items-center;
     }
 
     .search>input {

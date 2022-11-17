@@ -25,24 +25,33 @@ export const SearchMobile = ({ term, setTerm, onSubmit }: Search) => {
 
             {open &&
                 <>
+                    <div className='absolute w-screen h-full z-10 bg-sky-900'></div>
                     <form
                         onSubmit={onSubmit}
-                        className={`${open ? styles.formActive : styles.formDeactive} transition-all duration-[20]`}
+                        className={`${open ? styles.formActive : styles.formDeactive} relative transition-all duration-[20]`}
                     >
                         <input
                             autoFocus
-                            className={`${open ? styles.active : styles.deactive} text-black`}
+                            className={`${open ? styles.active : styles.deactive} text-black focus:outline-none`}
                             placeholder='search term'
                             value={term}
                             onChange={e => setTerm(e.target.value.toLowerCase())}
                         />
 
-                        <div
-                            onClick={toggleSearch}
+                        <button
+                            className='absolute right-4 text-black'
+                            type="submit"
                         >
-                            <CloseIcon />
-                        </div>
+                            <SearchIcon fontSize="small" />
+                        </button>
+
                     </form>
+                    <button
+                        onClick={toggleSearch}
+                        className='absolute right-4 z-20'
+                    >
+                        <CloseIcon />
+                    </button>
                 </>
             }
 

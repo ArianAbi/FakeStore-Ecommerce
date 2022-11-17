@@ -52,10 +52,17 @@ export const Header = () => {
 
                     <form className={styles.search} onSubmit={onFormSubmit}>
                         <input
+                            className='focus:outline-none'
                             placeholder='search term'
                             value={term}
                             onChange={e => setTerm(e.target.value.toLowerCase())}
                         />
+                        <button
+                            className='text-black font-bold absolute right-6'
+                            type='submit'
+                        >
+                            <SearchIcon fontSize='medium' sx={{ "&:hover": { color: "#0281C3" } }} />
+                        </button>
                     </form>
 
                 }

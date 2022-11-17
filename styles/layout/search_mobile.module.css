@@ -6,7 +6,7 @@
     }
 
     .active {
-        @apply absolute right-0 left-0 mx-auto rounded-full w-[70%] h-[35px] px-4 bg-white opacity-100;
+        @apply absolute right-0 left-0 mx-auto rounded-full w-full h-[35px] px-4 bg-white opacity-100;
     }
 
 
@@ -15,14 +15,14 @@
     }
 
     .formActive {
-        @apply absolute right-0 flex justify-center items-center w-screen h-[50px] bg-sky-900 z-10;
+        @apply absolute flex justify-center items-center w-[70%] h-[50px] z-10;
     }
 
-    .formDeactive>div {
+    .formDeactive.close_button {
         @apply w-[20px] h-[20px] flex items-center justify-center absolute right-5 opacity-0 -z-10;
     }
 
-    .formActive>div {
-        @apply w-[20px] h-[20px] flex items-center justify-center absolute right-8;
+    .formActive.close_button {
+        @apply w-[20px] h-[20px] flex items-center justify-center absolute right-8 z-50;
     }
 }
