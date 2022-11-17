@@ -24,10 +24,14 @@ export const Header = () => {
     const onFormSubmit = (e: any) => {
         e.preventDefault();
         if (term !== "") {
-            Router.replace(`/products?q=${term}`).then(Router.reload)
+            router.query.q = term
+            router.push(router).then(router.reload)
+            //Router.replace(`/products?q=${term}`).then(Router.reload)
         }
         else {
-            Router.replace('/products').then(Router.reload)
+            delete router.query.q
+            router.push(router).then(router.reload)
+            //Router.replace('/products').then(Router.reload)
         }
     }
 
