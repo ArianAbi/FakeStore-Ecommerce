@@ -2,7 +2,7 @@
 
 @layer components {
     .container {
-        @apply max-h-fit w-full flex flex-1 flex-col gap-3 p-4;
+        @apply max-h-fit w-full flex flex-1 flex-col gap-3 p-4 mx-auto;
     }
 
     .breedcrumb {

@@ -9,7 +9,7 @@ export default function LandingPage() {
         <title>HomePage</title>
       </Head>
 
-      <div className="h-screen w-screen flex flex-col items-center justify-center gap-4 bg-black">
+      <div className="h-screen w-full  flex flex-col items-center justify-center gap-4 bg-black">
         <h2 className="text-4xl">
           Still in Development
         </h2>

@@ -60,9 +60,6 @@ export default function Product_Detail(product: any) {
 
 
                 <AddToCard price={product.price} />
-
-                {/* this is to cover lost height of AddToCard component */}
-                <div className='h-[90px] w-full -z-10' />
             </div>
 
 
