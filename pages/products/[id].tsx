@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '/styles/product_dynamic_route.module.css';
@@ -6,6 +7,9 @@ import AddToCard from './components/AddToCard';
 import StarIcon from '@mui/icons-material/Star';
 
 export default function Product_Detail(product: any) {
+
+    const router = useRouter();
+
     return (
         <>
 
@@ -32,8 +36,18 @@ export default function Product_Detail(product: any) {
                     />
                 </div>
 
-                <span className={styles.category_tag}>
-                    <Link href='/products'>{product.category}</Link>
+                <span className={"gl_category_tag"}>
+                    <Link
+                        href="#"
+                        onClick={() => {
+                            delete router.query.id
+                            router.pathname = "/products"
+                            router.query.category = product.category
+                            router.push(router)
+                        }}
+                    >
+                        {product.category}
+                    </Link>
                 </span>
 
                 <div className=' pb-6 max-h-fit'>

@@ -10,22 +10,14 @@ export default function Products({ _products }: any) {
     const { query } = router;
 
     useEffect(() => {
-        if (Object.keys(query).length !== 0) {
-            const filterdProducts = _products.filter((product: any) => {
 
-                const title: string = product.title.toLowerCase();
+        let _filterdProducts = _products;
 
-                if (title.includes(`${query?.q}`)) {
-                    return product
-                }
+        _filterdProducts = query.category ? filterByCategory(query.category, _filterdProducts) : _filterdProducts;
+        _filterdProducts = query.q ? filterBySearchTerm(query.q, _filterdProducts) : _filterdProducts;
 
-            })
+        setProducts(_filterdProducts);
 
-            setProducts(filterdProducts);
-        }
-        else {
-            setProducts(_products)
-        }
     }, [])
 
     return (
@@ -35,9 +27,26 @@ export default function Products({ _products }: any) {
                 <title>Products</title>
             </Head>
 
+            {query.category &&
+                <div
+                    className="pt-2 px-4 lg:px-8 xl:px-10"
+                    onClick={() => {
+                        delete router.query.category;
+                        router.push(router).then(router.reload)
+                    }}
+                >
+                    <span
+                        className="gl_category_tag font-semibold scale-[80%] md:scale-100 my-2"
+                    >
+                        {query.category}<span className="pl-2 scale-90 font-semibold">&#x2715;</span>
+                    </span>
+                </div>
+            }
+
+
             <div
                 className="h-full w-full grid grid-cols-1 gap-0 
-                md:grid-cols-3 md:gap-4 md:px-4 md:py-8
+                md:grid-cols-3 md:gap-4 md:px-4 md:py-4
                 lg:grid-cols-4 lg:px-6
                 xl:grid-cols-5
                 "
@@ -61,11 +70,36 @@ export default function Products({ _products }: any) {
 
         </>
     )
+
+    function filterBySearchTerm(term: string | string[], dataToFilter: any[]) {
+        const filterdedData = _products.filter((product: any) => {
+
+            const title: string = product.title.toLowerCase();
+
+            if (title.includes(`${query.q}`)) {
+                return product
+            }
+
+        })
+
+        return filterdedData
+    }
+
+    function filterByCategory(category: string | string[] | undefined, dataToFilter: any) {
+
+        const filterdData = _products.filter((product: any) => {
+            if (product.category === category) {
+                return product
+            }
+        })
+
+        return filterdData
+    }
 }
 
 export async function getServerSideProps() {
     const res = await fetch(`${process.env.REACT_APP_URL}/products.json`);
-    const _products = await res.json()
+    const _products = await res.json() as any[]
 
     return {
         props: { _products }
