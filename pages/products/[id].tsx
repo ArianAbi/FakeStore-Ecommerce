@@ -36,7 +36,7 @@ export default function Product_Detail(product: any) {
                     />
                 </div>
 
-                <span className={"gl_category_tag"}>
+                <span className={"gl_filter_tag"}>
                     <Link
                         href="#"
                         onClick={() => {

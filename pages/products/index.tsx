@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Product_Item from "./components/Product_Item";
+import SearchIcon from '@mui/icons-material/Search';
+import CategoryIcon from '@mui/icons-material/Category';
+
 
 export default function Products({ _products }: any) {
 
@@ -27,21 +30,37 @@ export default function Products({ _products }: any) {
                 <title>Products</title>
             </Head>
 
-            {query.category &&
-                <div
-                    className="pt-2 px-4 lg:px-8 xl:px-10"
-                    onClick={() => {
-                        delete router.query.category;
-                        router.push(router).then(router.reload)
-                    }}
-                >
+            <div
+                className="flex items-end gap-2 pt-3 px-3 font-semibold md:scale-100 [&>span]:text-[0.7rem] [&>span]:md:text-[0.85rem]"
+            >
+                {query.category &&
                     <span
-                        className="gl_category_tag font-semibold scale-[80%] md:scale-100 my-2"
+                        className="gl_filter_tag"
+                        onClick={() => {
+                            delete router.query.category;
+                            router.push(router).then(router.reload)
+                        }}
                     >
-                        {query.category}<span className="pl-2 scale-90 font-semibold">&#x2715;</span>
+                        <span className="pr-2"><CategoryIcon fontSize="small" /></span>
+                        {query.category}
+                        <span className="pl-2 scale-90 font-semibold">&#x2715;</span>
                     </span>
-                </div>
-            }
+                }
+
+                {query.q &&
+                    <span
+                        className="gl_filter_tag"
+                        onClick={() => {
+                            delete router.query.q;
+                            router.push(router).then(router.reload)
+                        }}
+                    >
+                        <span className="pr-2"><SearchIcon fontSize="small" /></span>
+                        {query.q}
+                        <span className="pl-2 scale-90 font-semibold">&#x2715;</span>
+                    </span>
+                }
+            </div>
 
 
             <div
