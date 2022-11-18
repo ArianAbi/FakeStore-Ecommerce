@@ -18,6 +18,6 @@ a {
 
 @layer components {
   .gl_filter_tag {
-    @apply w-fit bg-sky-600 text-white text-[0.85rem] tracking-wider italic px-5 py-2 rounded-full;
+    @apply w-fit bg-sky-600 text-white text-[0.85rem] tracking-wider italic px-5 py-2 rounded-full cursor-pointer;
   }
 }

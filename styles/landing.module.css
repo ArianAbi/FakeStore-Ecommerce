@@ -1,0 +1,17 @@
+@tailwind components;
+
+@layer components {
+    .container {
+        @apply grid grid-cols-2 gap-2 px-4 w-full;
+    }
+
+    .category_item {
+        @apply flex justify-center items-end h-[160px] bg-cover rounded-md font-extrabold drop-shadow-lg pb-2;
+        box-shadow: inset 0px -30px 25px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    .all_category_item {
+        @apply flex justify-center items-end h-[120px] bg-cover col-span-2 rounded-md font-extrabold drop-shadow-lg pb-2;
+        box-shadow: inset 0px -30px 25px 0 rgba(0, 0, 0, 0.4);
+    }
+}
