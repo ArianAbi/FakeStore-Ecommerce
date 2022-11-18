@@ -131,7 +131,7 @@ export async function getServerSideProps(context: any) {
     })
 
     if (products.length !== 1) {
-        throw new Error('product not found')
+        return { notFound: true }
     }
 
     const productToShow = products[0]
