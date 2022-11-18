@@ -15,7 +15,7 @@ export default function (products: products) {
     return (
         <Link href={`/products/${products.id}`}>
             <div
-                className="h-[150px] w-full flex justify-between text-gray-700 border-b-2
+                className="h-[150px] w-full flex justify-between text-gray-700
                 md:flex-col md:h-[400px] md:border-2 md:rounded-md"
             >
 

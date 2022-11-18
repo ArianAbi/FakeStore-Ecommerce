@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Head from "next/head";
 import styles from '/styles/landing.module.css';
+import GitHub from "@mui/icons-material/GitHub";
 
 export default function LandingPage() {
 
@@ -9,18 +10,6 @@ export default function LandingPage() {
       <Head>
         <title>HomePage</title>
       </Head>
-
-      {/* <div className="h-screen w-full  flex flex-col items-center justify-center gap-4 bg-black">
-        <h2 className="text-4xl">
-          Still in Development
-        </h2>
-        <Link
-          className="text-cyan-400 text-lg underline"
-          href="/products"
-        >
-          visit /products or click on this link
-        </Link>
-      </div> */}
 
       <div className="flex flex-col justify-start items-center pt-6 w-full min-h-screen">
 
@@ -62,6 +51,23 @@ export default function LandingPage() {
             All Products
           </Link>
         </div>
+
+        <div className="flex flex-col items-center gap-6 px-6 max-w-[1024px]">
+          <h2 className="text-xl font-semibold">What is This Site?</h2>
+
+          <p className="text-center">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus alias reiciendis illo exercitationem distinctio veritatis ipsam ea quam, nemo, eveniet facere voluptate quidem vel eius dicta ad. Voluptate, aperiam excepturi?
+          </p>
+
+          <a href="https://github.com/ArianAbi/FakeStore-Ecommerce" target="_blank">
+            <button className="flex items-center gap-2 bg-green-600 text-white font-semibold py-2 px-5 rounded-md transition-colors hover:bg-green-700">
+              Go To Github <GitHub fontSize="small" />
+            </button>
+          </a>
+        </div>
+
+
+
       </div>
     </>
   )
