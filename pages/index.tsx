@@ -59,11 +59,11 @@ export default function LandingPage() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus alias reiciendis illo exercitationem distinctio veritatis ipsam ea quam, nemo, eveniet facere voluptate quidem vel eius dicta ad. Voluptate, aperiam excepturi?
           </p>
 
-          <a href="https://github.com/ArianAbi/FakeStore-Ecommerce" target="_blank">
+          <Link href="https://github.com/ArianAbi/FakeStore-Ecommerce" target="_blank" rel="noreferrer">
             <button className="flex items-center gap-2 bg-green-600 text-white font-semibold py-2 px-5 rounded-md transition-colors hover:bg-green-700">
               Go To Github <GitHub fontSize="small" />
             </button>
-          </a>
+          </Link>
         </div>
 
 

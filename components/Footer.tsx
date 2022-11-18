@@ -11,7 +11,7 @@ export const Footer = () => {
 
             <div className={styles.source_code_section}>
                 Source Code :
-                <Link href='https://github.com/ArianAbi/FakeStore-Ecommerce' target="_blank"><GitHubIcon /></Link>
+                <Link href='https://github.com/ArianAbi/FakeStore-Ecommerce' target="_blank" rel="noreferrer" ><GitHubIcon /></Link>
             </div>
 
 
