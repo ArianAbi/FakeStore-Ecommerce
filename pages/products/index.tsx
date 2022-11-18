@@ -64,7 +64,7 @@ export default function Products({ _products }: any) {
 
 
             <div
-                className="h-full w-full grid grid-cols-1 gap-0 
+                className="h-full w-full grid grid-cols-1 gap-0 divide-y-2
                 md:grid-cols-3 md:gap-4 md:px-4 md:py-4
                 lg:grid-cols-4 lg:px-6
                 xl:grid-cols-5

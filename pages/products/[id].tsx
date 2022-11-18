@@ -13,8 +13,6 @@ export default function Product_Detail(product: any) {
     const router = useRouter();
     const isMd = useMediaQuery('(max-width: 768px)');
 
-    useEffect(() => { console.log(isMd) }, [isMd])
-
     return (
         <>
 

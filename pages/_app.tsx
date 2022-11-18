@@ -1,14 +1,16 @@
 import '../styles/globals.css'
 import { useEffect, useState } from 'react';
 import useMediaQuery from '../hooks/useMediaQuery';
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 import type { AppProps } from 'next/app'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
+import { Loading } from '../components/loading';
 
 export default function App({ Component, pageProps }: AppProps) {
 
   const [atProductIdPage, setAtProductIdPage] = useState(false);
+  const [routeChanging, setRouteChanging] = useState(false);
   const router = useRouter();
   const isMd = useMediaQuery('(max-width: 768px)');
 
@@ -27,8 +29,14 @@ export default function App({ Component, pageProps }: AppProps) {
 
   }, [router])
 
+  Router.events.on('routeChangeStart', () => setRouteChanging(true))
+  Router.events.on('routeChangeComplete', () => setRouteChanging(false))
+  Router.events.on('routeChangeError', () => setRouteChanging(false))
+
   return (
     <>
+      {routeChanging && <Loading />}
+
       <div className='flex flex-col min-h-screen'>
         <Header />
         <Component {...pageProps} />
