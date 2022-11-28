@@ -11,9 +11,7 @@ export default function LandingPage() {
         <title>HomePage</title>
       </Head>
 
-      <div className="flex flex-col justify-start items-center pt-6 w-full min-h-screen">
-
-        <h2 className="text-xl text-black font-bold mb-4 md:text-2xl lg:text-3xl">Welcome to FakeStore</h2>
+      <div className="flex flex-col justify-start items-center pt-6 mb-6 w-full min-h-screen">
 
         <div className={styles.container}>
           <Link
