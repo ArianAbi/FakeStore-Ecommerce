@@ -114,7 +114,7 @@ export default function Product_Detail(product: any) {
     )
 }
 
-export async function getStaticProps(context: any) {
+export async function getServerSideProps(context: any) {
 
     const { id } = context.query;
 

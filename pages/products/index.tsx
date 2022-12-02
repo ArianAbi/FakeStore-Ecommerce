@@ -116,7 +116,7 @@ export default function Products({ _products }: any) {
     }
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const res = await fetch(`${process.env.REACT_APP_URL}/products.json`);
     const _products = await res.json() as any[]
 
