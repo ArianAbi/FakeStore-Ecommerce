@@ -32,8 +32,8 @@ export default function (products: products) {
                         sizes="(max-width: 768px) 100vw,
                         (max-width: 1200px) 50vw,
                         33vw"
-                        width={512}
-                        height={512}
+                        width={256}
+                        height={256}
                     />
                 </div>
 
