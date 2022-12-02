@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import dynamic from "next/dynamic";
 import Head from "next/head";
-import Product_Item from "./components/Product_Item";
+//import Product_Item from "./components/Product_Item";
 import SearchIcon from '@mui/icons-material/Search';
 import CategoryIcon from '@mui/icons-material/Category';
-
+const Product_Item = dynamic(() => import('./components/Product_Item'))
 
 export default function Products({ _products }: any) {
 
@@ -116,7 +117,7 @@ export default function Products({ _products }: any) {
     }
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const res = await fetch(`${process.env.REACT_APP_URL}/products.json`);
     const _products = await res.json() as any[]
 
