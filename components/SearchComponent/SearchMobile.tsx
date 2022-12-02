@@ -20,38 +20,44 @@ export const SearchMobile = ({ term, setTerm, onSubmit }: Search) => {
     return (
         <>
             <button className='absolute right-8 z-10 text-black' onClick={toggleSearch}>
-                <SearchIcon sx={{ fill: open ? "black" : "white" }} />
+                <SearchIcon sx={{ fill: "black" }} />
             </button>
 
             {open &&
                 <>
-                    <div className='absolute w-screen h-full z-10 bg-sky-900'></div>
+                    <div className='absolute w-screen h-full z-10 bg-inherit'></div>
                     <form
                         onSubmit={onSubmit}
                         className={`${open ? styles.formActive : styles.formDeactive} relative transition-all duration-[20]`}
                     >
+                        <button
+                            className='absolute left-4 z-20 text-black'
+                            type="submit"
+                        >
+                            <SearchIcon fontSize="small" sx={{ fill: "black" }} />
+                        </button>
+
                         <input
                             autoFocus
-                            className={`${open ? styles.active : styles.deactive} text-black focus:outline-none`}
+                            className={`${open ? styles.active : styles.deactive} text-black focus:outline-none pl-12`}
                             placeholder='search term'
                             value={term}
                             onChange={e => setTerm(e.target.value.toLowerCase())}
                         />
 
                         <button
-                            className='absolute right-4 text-black'
-                            type="submit"
+                            onClick={toggleSearch}
+                            className='absolute right-4 z-20'
                         >
-                            <SearchIcon fontSize="small" />
+                            <CloseIcon fontSize='small' />
                         </button>
-
                     </form>
-                    <button
+                    {/* <button
                         onClick={toggleSearch}
                         className='absolute right-4 z-20'
                     >
                         <CloseIcon />
-                    </button>
+                    </button> */}
                 </>
             }
 

@@ -2,11 +2,11 @@
 
 @layer components {
     .deactive {
-        @apply absolute right-0 left-0 mx-auto rounded-full w-[25px] h-[35px] px-4 bg-white opacity-0;
+        @apply absolute right-0 left-0 mx-auto rounded-lg w-[25px] h-[35px] bg-gray-200 opacity-0;
     }
 
     .active {
-        @apply absolute right-0 left-0 mx-auto rounded-full w-full h-[35px] px-4 bg-white opacity-100;
+        @apply absolute right-0 left-0 mx-auto rounded-lg w-full h-[35px] bg-gray-200 opacity-100;
     }
 
 
@@ -15,7 +15,7 @@
     }
 
     .formActive {
-        @apply absolute flex justify-center items-center w-[70%] h-[50px] z-10;
+        @apply absolute flex justify-center items-center w-[80%] h-[50px] z-10;
     }
 
     .formDeactive.close_button {

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Router, { useRouter } from 'next/router';
+import Head from 'next/head';
 import useMediaQuery from '../hooks/useMediaQuery';
 import Link from 'next/link';
 import styles from '/styles/layout/header.module.css';
@@ -39,6 +40,7 @@ export const Header = () => {
 
     return (
         <>
+
             <div className={styles.header_protector} />
             <header className={styles.header}>
                 <div className={styles.logo}>
