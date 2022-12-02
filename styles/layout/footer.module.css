@@ -21,8 +21,8 @@
     /* New */
 
     .container {
-        @apply max-w-full flex flex-col gap-8 bg-gray-50 pl-20 py-10
-        md:flex-row md:justify-center md:gap-20;
+        @apply max-w-full flex flex-col gap-8 bg-gray-50 pl-20 py-10 md:flex-row md:justify-center md:gap-20;
+        margin-top: auto;
     }
 
     .container>div {
