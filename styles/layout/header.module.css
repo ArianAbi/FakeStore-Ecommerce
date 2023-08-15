@@ -21,6 +21,6 @@
     }
 
     .search>input {
-        @apply w-full h-full px-4 rounded-lg text-black bg-gray-200;
+        @apply w-full h-full px-4 rounded-full text-black bg-gray-200;
     }
 }

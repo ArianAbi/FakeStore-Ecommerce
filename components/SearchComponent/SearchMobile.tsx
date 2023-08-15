@@ -39,7 +39,7 @@ export const SearchMobile = ({ term, setTerm, onSubmit }: Search) => {
 
                         <input
                             autoFocus
-                            className={`${open ? styles.active : styles.deactive} text-black focus:outline-none pl-12`}
+                            className={`${open ? styles.active : styles.deactive}  text-black focus:outline-none pl-12`}
                             placeholder='search term'
                             value={term}
                             onChange={e => setTerm(e.target.value.toLowerCase())}
