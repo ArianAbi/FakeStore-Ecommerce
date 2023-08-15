@@ -41,11 +41,11 @@ export const Header = () => {
     return (
         <>
 
-            <div className={styles.header_protector} />
+            <div className={`${styles.header_protector} bg-red-500`} />
             <header className={styles.header}>
                 <div className={styles.logo}>
                     <Link href="/">
-                        Fstore
+                        Fakestore
                     </Link>
                 </div>
 
