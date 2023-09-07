@@ -17,6 +17,7 @@ export default function Product_Detail(product: any) {
         <>
 
             <Head>
+                {/*@ts-ignore*/}
                 <title style={{ viewTransitionName: `title-${product.id}` }}>{product.title}</title>
             </Head>
 
@@ -41,6 +42,7 @@ export default function Product_Detail(product: any) {
                             loading="eager"
                             width={1024}
                             height={1024}
+                            //@ts-ignore
                             style={{ viewTransitionName: `img-${product.id}` }}
                         />
                     </div>

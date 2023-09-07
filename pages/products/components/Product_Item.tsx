@@ -34,6 +34,7 @@ export default function (products: products) {
                         33vw"
                         width={256}
                         height={256}
+                        //@ts-ignore
                         style={{ viewTransitionName: `img-${products.id}` }}
                     />
                 </div>

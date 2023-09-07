@@ -6,6 +6,7 @@ import type { AppProps } from 'next/app'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { Loading } from '../components/loading';
+//@ts-ignore
 import { useNextRouterViewTransitions } from "use-view-transitions/next";
 
 export default function App({ Component, pageProps }: AppProps) {
