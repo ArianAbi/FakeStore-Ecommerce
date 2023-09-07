@@ -17,7 +17,7 @@ export default function Product_Detail(product: any) {
         <>
 
             <Head>
-                <title>{product.title}</title>
+                <title style={{ viewTransitionName: `title-${product.id}` }}>{product.title}</title>
             </Head>
 
             <div
@@ -41,6 +41,7 @@ export default function Product_Detail(product: any) {
                             loading="eager"
                             width={1024}
                             height={1024}
+                            style={{ viewTransitionName: `img-${product.id}` }}
                         />
                     </div>
 
@@ -73,7 +74,9 @@ export default function Product_Detail(product: any) {
 
 
 
-                        <p className={styles.rating}>
+                        <p
+                            className={styles.rating}
+                        >
                             <StarIcon />
                             {product.rating.rate}
                         </p>
@@ -90,7 +93,9 @@ export default function Product_Detail(product: any) {
                     {!isMd &&
 
                         <div className='flex w-full justify-between mt-auto'>
-                            <p className="font-bold text-xl text-green-600">
+                            <p
+                                className="font-bold text-xl text-green-600"
+                            >
                                 {product.price}&#8202;$
                             </p>
 

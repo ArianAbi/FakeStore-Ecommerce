@@ -34,6 +34,7 @@ export default function (products: products) {
                         33vw"
                         width={256}
                         height={256}
+                        style={{ viewTransitionName: `img-${products.id}` }}
                     />
                 </div>
 
@@ -56,7 +57,9 @@ export default function (products: products) {
                             {products.price}&#8202;$
                         </p>
 
-                        <p className='text-yellow-500 flex gap-1 text-base font-semibold items-center pt-4'>
+                        <p
+                            className='text-yellow-500 flex gap-1 text-base font-semibold items-center pt-4'
+                        >
                             <StarIcon />
                             {products.rate}
                         </p>

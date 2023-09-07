@@ -6,12 +6,14 @@ import type { AppProps } from 'next/app'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { Loading } from '../components/loading';
+import { useNextRouterViewTransitions } from "use-view-transitions/next";
 
 export default function App({ Component, pageProps }: AppProps) {
 
   const [atProductIdPage, setAtProductIdPage] = useState(false);
   const [routeChanging, setRouteChanging] = useState(false);
   const router = useRouter();
+  useNextRouterViewTransitions(router);
   const isMd = useMediaQuery('(max-width: 768px)');
 
   useEffect(() => {
@@ -35,7 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      {routeChanging && <Loading />}
+      {/* {routeChanging && <Loading />} */}
 
       <div className='flex flex-col min-h-screen'>
         <Header />
